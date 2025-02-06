@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Sriracha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');
+
+*{
+    font-family: "Racing Sans One", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background-color: #000;
+    background-image: url(https://wallpapercave.com/wp/wp13101004.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+a:hover{
+    color: darkslateblue;
+}
+
+header{
+    position: relative;
+    padding: 0 2rem;
+}
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.navbar .links{
+    display: flex;
+    gap: 2rem;
+}
+.navbar .redes{
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+.action_btn{
+    background-color: rgb(76, 53, 92);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+.action_btn:hover{
+    background-color: rgb(88, 56, 96);
+    scale: 1.05;
+    color: #fff;
+}
+.action_btn:active{
+    transition: 0.95;
+}
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open{
+height: 270px;
+}
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dropdown_menu .action_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dropdown_menu .social {
+    text-decoration: none;
+    color: #fff;
+    padding-left: 37%; 
+}
+.dropdown_menu .social i{
+    margin-left: 6px;
+}
+
+section#hero{
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+section#ola{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #3586ff;
+    overflow: hidden;
+}
+
+section .wave{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(/imagenes/wave.png);
+    background-size: 1000px 100px;
+}
+
+section .wave.wave1{
+    animation: animate 30s linear infinite;
+    z-index: 1000;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+}
+section .wave.wave2{
+    animation: animate2 30s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+}
+section .wave.wave3{
+    animation: animate1 30s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 15px;
+}
+
+section .wave.wave4{
+    animation: animate2 15s linear infinite;
+    z-index: 998;
+    opacity: 0.7;
+    animation-delay: -2s;
+    bottom: 20px;
+}
+@keyframes animate{
+    0%
+    {
+        background-position-x: 0;
+    }
+    100%
+    {
+        background-position-x: 1000px;
+    }
+}
+@keyframes animate2{
+    0%
+    {
+        background-position-x: 0;
+    }
+    100%
+    {
+        background-position-x: -1000px;
+    }
+}
+
+
+#hero h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+@media(max-width: 992px){
+    .navbar .links,
+    .navbar .action_btn{
+        display: none;
+    }
+    .navbar .redes{
+        display: block;
+    }
+    .dropdown_menu{
+        display: block;
+    }
+}
+
+@media(max-width: 576px){
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
+    }
+}
+
+#acerca{
+    max-width: 1100px;
+    margin: auto;
+    padding: 100px 15px;
+    color: #fff;
+    display: flex;
+    
+    }
+    .fondo_seccion{
+        height: 125vh;
+        background-color: #000;
+        background-image: url(https://wallpapers.com/images/hd/bloodborne-4k-hd-9073ysygvh2kq1bk.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    #acerca .contenedor_foto{
+        max-width: 300px;
+        margin-right: 300px;
+    }
+    #acerca .contenedor_foto img{
+        padding: 20px;
+        width: 400%;
+        border-radius: 20px;
+        background-color: #fff;
+    }
+    #acerca .acerca{
+        margin:  0 40px;
+    }
+    #acerca .acerca .titulo-seccion{
+        font-family: "Ultra", serif;
+        font-size:  30px;
+        text-transform: uppercase;
+        color: rgb(92, 121, 71);
+        text-decoration: underline;
+        text-decoration-color: rgb(45, 77, 49);
+        text-decoration-thickness: 3px;
+    }
+    #acerca .acerca h2{
+        font-size:  34px;
+        font-weight: bold;
+        margin: 20px 0;
+        letter-spacing: 2px;
+        color: rgb(255, 255, 255);
+    }
+    #acerca .acerca  span{
+        color: rgb(119, 156, 95);
+    }
+    #acerca .acerca  h3{
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+    }
+    
+    #acerca .acerca  p{
+        font-size: 14px;
+        line-height: 25px;
+        color: rgb(237, 237, 237);
+        margin-bottom: 12px;
+        text-align: justify;
+    }
